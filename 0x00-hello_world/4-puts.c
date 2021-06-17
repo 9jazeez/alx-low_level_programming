@@ -2,13 +2,14 @@
 
 /*
  *
- * comments come here
+ * Starting point main
  *
  */
 
-int main(void){
-  puts("Programming is like building amultilingual puzzle");
+int main(void)
+{
+puts("Programming is like building amultilingual puzzle");
 
-  return (0);
+return (0);
 
 }
