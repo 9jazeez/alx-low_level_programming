@@ -1,17 +1,18 @@
 #include <stdio.h>
+/*
+ *
+ * Comments come here
+ *
+ */
+
 
 int main(void){
-  char a = "a";
-  int b = 2;
-  long int c = 3;
-  long long int d = 2;
-  float e = 2.5;
 
-  printf("size of char: %s \n",sizeof(a));
- puts("size of int:  %d\n",sizeof(b));
- printf("size of long int: %li\n",sizeof(c));
- printf("size of long long int: %lli\n",sizeof(d));
- puts("size of float: %f\n",sizeof(e));
+ printf("size of char: %lu \n",sizeof(char));
+ printf("size of int:  %lu byte(s)\n",sizeof(int));
+ printf("size of long int: %lu byte(s)\n",sizeof(long int));
+ printf("size of long long int: %lu byte(s)\n",sizeof(long long int));
+ printf("size of float: %lu byte(s)\n",sizeof(float));
 
  return (0); 
 }
