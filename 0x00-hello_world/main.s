@@ -1,45 +1,31 @@
 	.file	"main.c"
+	.intel_syntax noprefix
+	.def	___main;	.scl	2;	.type	32;	.endef
+	.section .rdata,"dr"
+LC0:
+	.ascii "Hello, World\0"
 	.text
-	.section	.rodata
-.LC0:
-	.string	"Hello, World"
-	.text
-	.globl	main
-	.type	main, @function
-main:
-.LFB0:
+	.globl	_main
+	.def	_main;	.scl	2;	.type	32;	.endef
+_main:
+LFB10:
 	.cfi_startproc
-	endbr64
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	leaq	.LC0(%rip), %rdi
-	movl	$0, %eax
-	call	printf@PLT
-	movl	$0, %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	push	ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	mov	ebp, esp
+	.cfi_def_cfa_register 5
+	and	esp, -16
+	sub	esp, 16
+	call	___main
+	mov	DWORD PTR [esp], OFFSET FLAT:LC0
+	call	_printf
+	mov	eax, 0
+	leave
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
 	ret
 	.cfi_endproc
-.LFE0:
-	.size	main, .-main
-	.ident	"GCC: (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
-	.section	.note.GNU-stack,"",@progbits
-	.section	.note.gnu.property,"a"
-	.align 8
-	.long	 1f - 0f
-	.long	 4f - 1f
-	.long	 5
-0:
-	.string	 "GNU"
-1:
-	.align 8
-	.long	 0xc0000002
-	.long	 3f - 2f
-2:
-	.long	 0x3
-3:
-	.align 8
-4:
+LFE10:
+	.ident	"GCC: (MinGW.org GCC-6.3.0-1) 6.3.0"
+	.def	_printf;	.scl	2;	.type	32;	.endef
