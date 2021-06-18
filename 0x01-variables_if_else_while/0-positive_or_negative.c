@@ -4,7 +4,6 @@
 
 /**
  * main - Entry point
- * @n : random variable
  *
  * Return: Always 0 (Success)
  */
