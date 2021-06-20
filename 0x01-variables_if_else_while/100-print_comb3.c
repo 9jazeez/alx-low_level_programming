@@ -9,14 +9,23 @@
 int main(void)
 {
 	int c;
+	int y;
 
 	for (c = 0; c <= 9; c++)
 	{
-		putchar(c + '0');
-		if (c != 9)
+
+		for (y = c; y <= 9; y++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (c != y)
+			{
+				putchar(c + '0');
+				putchar(y + '0');
+				if (c != 8)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
 		}
 	}
 	putchar('\n');
