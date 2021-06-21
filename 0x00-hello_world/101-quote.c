@@ -4,16 +4,17 @@
 /**
  * main - Entry point
  *
- * Return: Always 0 (Error value)
+ * Return: Always 1 (Error value)
  */
 int main(void)
 {
-int i = 0;
-char c[100] = "and that piece of art is useful\" - Dora Korpar, 20i5-10-19\n";
-while (i < 57)
-{
-putchar(c[i]);
-i++;
-}
-return (0);
+	int i = 0;
+	char c[100] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	
+	while (i < 58)
+	{
+		putchar(c[i]);
+		i++;
+	}
+	return (1);
 }
