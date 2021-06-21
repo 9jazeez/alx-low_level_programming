@@ -10,7 +10,7 @@ int main(void)
 {
 	int i = 0;
 	char c[100] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-	
+
 	while (i < 58)
 	{
 		putchar(c[i]);
