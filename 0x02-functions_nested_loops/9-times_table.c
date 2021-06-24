@@ -7,16 +7,19 @@
  */
 void times_table(void)
 {
-	int a = 0;
-	int b = 0;
+	int a;
+	int b;
 	int c;
 
-	while (a <= 9)
+	for (a = 0; a <= 9; a++)
 	{
-		while (b <= 9)
+		for (b = 0; b <= 9; b++)
 		{
 			c = a * b;
-			_putchar(c + '0');
+			if (c == 0)
+				_putchar(c + '0');
+			else
+				digits(c);
 			_putchar(',');
 			if (c > 9)
 				_putchar(' ');
@@ -25,10 +28,23 @@ void times_table(void)
 				_putchar(' ');
 				_putchar(' ');
 			}
-			b++;
 		}
 		_putchar('\n');
-		a++;
 	}
-	a++;
+}
+
+/**
+ * digits - print the digits  in a number
+ * @n: The number that digits are to be printed
+ *
+ * Return: Returns void
+ */
+
+void digits(int n)
+{
+	if (n != 0)
+	{
+		digits(n / 10);
+		_putchar(n % 10 + '0');
+	}
 }
