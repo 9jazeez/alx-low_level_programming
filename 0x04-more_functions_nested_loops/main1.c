@@ -7,11 +7,8 @@
  */
 int main(void)
 {
-	print_triangle(0);
-	print_triangle(1);
-	print_triangle(24);
-	print_triangle(20);
-	print_triangle(10);
+	print_diagonal(10);
+	_putchar('\n');
 
 	return (0);
 }
