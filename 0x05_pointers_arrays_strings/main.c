@@ -8,18 +8,13 @@
  */
 int main(void)
 {
-	int a;
-	int b;
-	int *pt2;
-	int *pt;
+	char *a;
+	int c;
 
-	a = 100;
-	b = 200;
-	pt2 = &b;
-	pt = &a;
-	printf("Value of a: %d  and b: %d\n", a, b);
-	swap_int(pt, pt2);
-	printf("New value of a: %d and b:%d\n", a, b);
+	a = "Holberton is a good coding school";
+	printf("Value of a: %s\n", a);
+	c = _strlen(a);
+	printf("Length of a: %d\n", c);
 
 	return (0);
 }
