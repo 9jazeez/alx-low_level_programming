@@ -10,7 +10,7 @@ int main(void)
 {
 	char *a;
 	
-	a = "I do not fear computers. I fear the lack of them - Isaac Asimov";
+	a = "Holberton!";
 	print_rev(a);
 
 	return (0);
