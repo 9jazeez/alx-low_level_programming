@@ -9,12 +9,9 @@
 int main(void)
 {
 	char *a;
-	int c;
-
-	a = "Holberton is a good coding school";
-	printf("Value of a: %s\n", a);
-	c = _strlen(a);
-	printf("Length of a: %d\n", c);
+	
+	a = "I do not fear computers. I fear the lack of them - Isaac Asimov";
+	print_rev(a);
 
 	return (0);
 }
