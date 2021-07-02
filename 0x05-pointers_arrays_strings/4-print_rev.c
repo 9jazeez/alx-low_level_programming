@@ -10,6 +10,7 @@ void print_rev(char *s)
 {
 	int i;
 	char b;
+	int c;
 
 	b = *s;
 	i = 0;
@@ -18,12 +19,13 @@ void print_rev(char *s)
 		b = *(s + i);
 		i++;
 	}
+	c = i - 2;
 
-	while (i >= 0)
+	while (c >= 0)
 	{
-		b = *(s + i);
+		b = *(s + c);
 		_putchar(b);
-		--i;
+		--c;
 	}
 	_putchar('\n');
 }
