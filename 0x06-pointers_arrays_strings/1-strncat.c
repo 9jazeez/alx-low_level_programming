@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stddef.h>
 
 /**
  * _strncat- A function that concatenate using n type
@@ -13,14 +14,16 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int i;
 	int j;
+	int a;
 
 	i = 0;
 	j = 0;
+	a = n - 1;
 	while (dest[i] != '\0')
 		i++;
-	while (j <= n)
+	while ((dest[i++] = src[j++]) != '\0' && a--)
 	{
-		dest[i++] = src[j++];
+		;
 	}
 
 	return (dest);
