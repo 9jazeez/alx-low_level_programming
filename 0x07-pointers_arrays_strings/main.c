@@ -8,11 +8,12 @@
  *     */
 int main(void)
 {
-	    char s1[] = "Hello";
-	        char s2[] = "World!";
+	    char *s = "hello, world";
+	        char *f = "world";
+		    char *t;
 
-		    printf("%d\n", _strcmp(s1, s2));
-		        printf("%d\n", _strcmp(s2, s1));
-			    printf("%d\n", _strcmp(s1, s1));
+		        t = _strpbrk(s, f);
+			    printf("%s\n", t);
 			        return (0);
 }
+
