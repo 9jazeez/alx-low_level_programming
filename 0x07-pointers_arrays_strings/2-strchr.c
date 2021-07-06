@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * _strchr- A function that returns a pointer to an occurrance in a string
  * @s: String to get
@@ -28,6 +27,5 @@ char *_strchr(char *s, char c)
 			s1 = 0;
 		}
 	}
-
 	return (s1);
 }
