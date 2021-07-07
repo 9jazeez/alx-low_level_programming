@@ -4,7 +4,7 @@
 **Usings pointers to pointers**
 
 `int **pointer;`
-`int array[i][j];
+`int array[i][j];`
 
 *This directory contains solutions to tasks on 0x07-questions.*
 
