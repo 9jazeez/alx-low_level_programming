@@ -2,7 +2,7 @@
 #define HOLBERTON_H
 
 void _puts_recursion(char *);
-char *_memcpy(char *, char *, unsigned int);
+void _print_rev_recursion(char *);
 char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
@@ -11,5 +11,12 @@ char *cap_string(char *);
 void _putchar(int);
 int _strlen(char *);
 int _strncmp(char *, char *, int );
+int _strlen_recursion(char *);
+int factorial(int n);
+int _pow_recursion(int , int );
+int _sqrt_recursion(int );
+int is_prime_number(int );
+void myrecursion(char *, int );
+int count(char *, int );
 
 #endif /*HOLBERTON_H*/
