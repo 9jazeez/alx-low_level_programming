@@ -17,7 +17,7 @@ int _pow_recursion(int , int );
 int _sqrt_recursion(int );
 int is_prime_number(int );
 int is_prime_number2(int , int );
-void myrecursion(char *, int );
-int count(char *, int );
+int isnotdigit(int,char **);
+int check(char *pt);
 
 #endif /*HOLBERTON_H*/

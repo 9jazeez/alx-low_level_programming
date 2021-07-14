@@ -10,45 +10,80 @@
  * Return: 0
  */
 
-int _isdigit(char *argv[]);
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int i;
 	int a;
+	int b;
 
-	for (i = 1; i < argc - 1; i++)
+	if (argc <= 1)
 	{
-		if (_isdigit(argv[i]) == 1)
-		{
-			printf("Error\n");
-			return (0);
-		}
-		else if (_isdigit(argv[i]) == 0)
-		{
-			printf("Error2\n");
-			return (1);
-		}
-		else
-		{
-			a += atoi(argv[i]);
-		}
+		printf("%d\n", 0);
 	}
-	printf("%d\n",a);
+	else if (isnotdigit(argc, argv))
+	{
+		printf("Error\n");
+		return (1);
+	}
+	else
+	{
+		for (i = 1; i < argc; i++)
+		{
+			b = atoi(argv[i]);
+			a = a + b;
+		}
+		printf("%d\n", a);
+	}
 	return (0);
+
 }
 
-int _isdigit(char **argv)
+/**
+ * check-Checks if it is digit or not
+ * @pt:Item to check
+ *
+ * Return: 1 or 0
+ */
+
+int check(char *pt)
+{
+	int a;
+	int i;
+
+	for (i = 'a'; i <= 'z'; i++)
+	{
+		if (pt[0] == i)
+		{
+
+			a = 1;
+			break;
+		}
+
+		else
+			a = 0;
+	}
+	return (a);
+}
+
+/**
+ * isnotdigit- Checks if a string is a not a digit
+ * @argc: number of commands to check from
+ * @argv: Arrays of command
+ *
+ * Return: 1 if not a digit and 0 otherwise
+ */
+
+int isnotdigit(int argc, char *argv[])
 {
 	int i;
-	int a;
 
-	for (i = 0, a = 'a'; i <= 9 || a <= 'Z'; i++, a++)
+	for (i = 1; i < argc; i++)
 	{
-		if (atoi(*argv[0]) == i)
+		if (check(argv[i]))
+		{
 			return (1);
-		else if (atoi(argv[0]) == a)
-			return (0);
+		}
 	}
 	return (0);
 }
