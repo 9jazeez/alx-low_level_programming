@@ -27,6 +27,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	return (newT);
 }
 
+/**
+ * _strlen- For counting string
+ * @s: String to check length
+ *
+ * Return: int (length of string)
+ */
 int _strlen(char *s)
 {
 	int i;
@@ -35,6 +41,14 @@ int _strlen(char *s)
 		s++;
 	return (i);
 }
+
+/**
+ * _strcpy - Function like inbuilt strcpy
+ * @s: Destination
+ * @s2: Source
+ *
+ * Return: Pointer to destination
+ */
 
 char *_strcpy(char *s, char *s2)
 {
