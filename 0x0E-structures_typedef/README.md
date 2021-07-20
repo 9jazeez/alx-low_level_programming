@@ -1,26 +1,18 @@
-# C-Preprocessor And Macros
+# Structure and Typedef in C
 
-**The Compilation process contains majorly four different stages or modules that are**
-> #### Modules of Compilation
->
-> -Preprocessor
-> -Compiler
-> -Assembler
-> -Linker
->
-> And all four can be applied at once using `gcc file.c`
+**The struct keyword is used to create a new data type and typedef is used**
+**when there is need to rename the data type**
 
+*This directory contains solutions to tasks on 0x0E-structures_typedef questions.*
 
-**The major function of the preprocess is to:**
-+Remove commnt
-+Link the code with the header file
-+Output for compilation
+## dog.h
 
+**An header file that contains definition to a new type dog**
+**It also contains all prototypes and structs used in this project**
 
+## 1-init_dog.c
 
+**A function that initiates a variable struct dog**
 
-*This directory contains solutions to tasks on 0x0D-preprocessor questions.*
-
-## 0.Whatsmyname.c
-
-**An object that prints the name of the executing file**
+## 2-print_dog.c
+**A function that prints the struct dog type**
