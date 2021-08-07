@@ -32,9 +32,9 @@ unsigned int binary_to_uint(const char *s)
 		for (f = 'a'; f < 'z'; f++)
 		{
 			if (f == *last)
-			{
 				return (0);
-			}
+			else if (*last == ' ')
+				return (0);
 		}
 
 		if (*last == '1')
