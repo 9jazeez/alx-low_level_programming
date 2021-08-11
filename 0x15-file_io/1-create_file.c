@@ -18,16 +18,21 @@ int create_file(const char *filename, char *text_content)
 	int fd;
 	char *f = text_content;
 	int n;
+	ssize_t e;
 
-	fd = open(filename, O_CREAT | O_RDWR, 00700);
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 00600);
 	if (fd == -1 || filename == NULL)
 	{
-		return (0);
+		return (-1);
 	}
 
 	for (n = 0; *f != '\0'; n++)
 		f++;
-	write(fd, text_content, n);
+	e = write(fd, text_content, n);
+	if (e == -1)
+	{
+		return (-1);
+	}
 
 	close(fd);
 
