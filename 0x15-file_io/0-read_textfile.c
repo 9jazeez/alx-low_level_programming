@@ -42,7 +42,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	f = buff;
 	for (i = 0; *f != '\0'; i++)
 	{
-		n = write(1, f, 1);
+		n = write(2, f, 1);
 		if (n == -1)
 			return (0);
 		f++;
