@@ -17,13 +17,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	ssize_t i;
-	char buff[550];
+	char *buff;
 	char *f = NULL;
 	ssize_t n;
 
 	i = 0;
 	fd = open(filename, O_RDONLY, 00600);
 	if (fd == -1 || filename == NULL)
+	{
+		return (0);
+	}
+
+	buff = malloc(sizeof(char) * letters);
+	if (buff == NULL)
 	{
 		return (0);
 	}
@@ -41,6 +47,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			return (0);
 		f++;
 	}
+	free(buff);
 
 	return (i);
 }
