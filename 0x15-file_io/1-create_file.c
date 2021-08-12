@@ -21,17 +21,26 @@ int create_file(const char *filename, char *text_content)
 	ssize_t e;
 
 	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 00600);
-	if (fd == -1 || filename == NULL || text_content == NULL)
+	if (fd == -1 || filename == NULL)
 	{
 		return (-1);
 	}
 
-	for (n = 0; *f != '\0'; n++)
-		f++;
-	e = write(fd, text_content, n);
-	if (e == -1)
+	if (text_content == NULL)
 	{
-		return (-1);
+		write(fd, "", 1);
+	}
+	else
+	{
+
+		for (n = 0; *f != '\0'; n++)
+			f++;
+
+		e = write(fd, text_content, n);
+		if (e == -1)
+		{
+			return (-1);
+		}
 	}
 
 	close(fd);
