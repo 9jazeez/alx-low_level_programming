@@ -36,8 +36,7 @@ int cp_file(const char *file_from, const char *file_to)
 	buff = malloc(sizeof(char) * n);
 
 	while ((n = read(fd1, buff, sizeof(buff))) > 0)
-	{		
-		/*buff[n] = '\0';*/
+	{
 		write(fd2, buff, n);
 	}
 
