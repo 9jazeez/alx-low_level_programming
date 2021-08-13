@@ -25,9 +25,19 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	for (n = 0; *f != '\0'; n++)
-		f++;
-	write(fd, text_content, n);
+	if (text_content == NULL)
+	{
+		close(fd);
+
+		return (1);
+	}
+
+	else
+	{
+		for (n = 0; *f != '\0'; n++)
+			f++;
+		write(fd, text_content, n);
+	}
 
 	close(fd);
 
