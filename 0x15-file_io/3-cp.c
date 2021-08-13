@@ -18,7 +18,7 @@ int cp_file(const char *file_from, const char *file_to)
 	int fd1;
 	int fd2;
 	int n1, n2;
-	ssize_t n = 3000;
+	ssize_t n = 1024;
 	char *buff;
 
 	fd1 = open(file_from, O_RDWR, 00777);
@@ -35,9 +35,11 @@ int cp_file(const char *file_from, const char *file_to)
 
 	buff = malloc(sizeof(char) * n);
 
-	n = read(fd1, buff, n);
-	buff[n] = '\0';
-	write(fd2, buff, n);
+	while ((n = read(fd1, buff, sizeof(buff))) > 0)
+	{		
+		/*buff[n] = '\0';*/
+		write(fd2, buff, n);
+	}
 
 	free(buff);
 
