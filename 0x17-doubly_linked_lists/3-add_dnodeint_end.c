@@ -18,7 +18,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	last = *head;
 	start = *head;
-	n1 = malloc(sizeof(dlistint_t));
+	n1 = (dlistint_t *)malloc(sizeof(dlistint_t));
 	if (n1 == NULL)
 	{
 		printf("Memory issues");
